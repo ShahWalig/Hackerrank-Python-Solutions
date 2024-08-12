@@ -4,6 +4,7 @@ class SinglyLinkedListNode:
         self.data = data
         self.next = None
 
+
 def insertNodeAtHead(llist, data):
     # Create a new node with the given data
     new_node = SinglyLinkedListNode(data)
