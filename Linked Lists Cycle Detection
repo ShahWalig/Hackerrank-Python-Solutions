@@ -1,0 +1,14 @@
+#Data Structures Linked Lists Cycle Detection
+def has_cycle(head):
+    fast = head
+    slow = head
+    if head is None or head.next is None:
+        return False
+
+    while fast and fast.next:
+        fast = fast.next.next
+        slow = slow.next
+        if slow == fast:
+            return True
+    return False
+        
