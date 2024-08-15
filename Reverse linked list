@@ -1,0 +1,14 @@
+def reversePrint(llist):
+    # Write your code here
+    
+    prev = None
+    curr = llist
+    while curr:
+        next_current_node = curr.next
+        curr.next = prev
+        prev = curr
+        curr = next_current_node
+    revrese_list = prev
+    while revrese_list:
+        print(revrese_list.data)
+        revrese_list = revrese_list.next
