@@ -1,0 +1,23 @@
+#Insert a node at a specific position in a linked list . hackerrank Question
+def insertNodeAtPosition(llist, data, position):
+    new_node = SinglyLinkedListNode(data)
+    list_position = 0
+    prev = None
+    current_node = llist
+    if position == 0:
+        new_node.next = llist
+        return new_node
+        
+    while current_node and list_position < position:
+        prev = current_node
+        current_node = current_node.next
+        list_position += 1
+    if prev is None:
+        return llist
+        
+    prev.next = new_node
+    new_node.next = current_node
+
+      
+    return llist
+            
