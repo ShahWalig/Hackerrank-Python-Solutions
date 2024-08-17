@@ -1,0 +1,22 @@
+def compare_lists(llist1, llist2):
+    # Start from the head of both linked lists
+    current_node1 = llist1
+    current_node2 = llist2
+    
+    # Traverse both lists simultaneously
+    while current_node1 and current_node2:
+        # If data at any node does not match, lists are not equal
+        if current_node1.data != current_node2.data:
+            return 0
+        
+        # Move to the next node in both lists
+        current_node1 = current_node1.next
+        current_node2 = current_node2.next
+        
+    # After traversal, check if both lists have ended
+    if current_node1 is None and current_node2 is None:
+        # Both lists have ended at the same time, so they are equal
+        return 1
+    else:
+        # Lists ended at different times, so they are not equal
+        return 0
