@@ -1,0 +1,22 @@
+def removeDuplicates(llist):
+    """
+    Remove duplicate nodes from a sorted singly linked list.
+
+    Args:
+    llist (SinglyLinkedListNode): The head of the sorted singly linked list.
+
+    Returns:
+    SinglyLinkedListNode: The head of the modified linked list with duplicates removed.
+    """
+    current_node = llist
+    
+    while current_node and current_node.next:
+        # Check if the current node's data is equal to the next node's data
+        if current_node.data == current_node.next.data:
+            # Skip the next node as it is a duplicate
+            current_node.next = current_node.next.next
+        else:
+            # Move to the next node if no duplicate is found
+            current_node = current_node.next
+    
+    return llist
