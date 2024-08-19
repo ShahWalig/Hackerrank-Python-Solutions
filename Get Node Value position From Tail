@@ -1,0 +1,16 @@
+# Get Node Value position From Tail
+
+def getNode(llist, positionFromTail):
+    position = 0
+    prev = None
+    curr = llist
+    while curr:
+        nxt = curr.next
+        curr.next = prev
+        prev = curr
+        curr = nxt
+    r = prev
+    while position < positionFromTail:
+        position +=1
+        r = r.next
+    return r.data
