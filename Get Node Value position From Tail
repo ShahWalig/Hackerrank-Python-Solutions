@@ -1,16 +1,25 @@
 # Get Node Value position From Tail
 
 def getNode(llist, positionFromTail):
+    # Step 1: Reverse the linked list
     position = 0
     prev = None
     curr = llist
+    
+    # Reverse the linked list
     while curr:
-        nxt = curr.next
-        curr.next = prev
-        prev = curr
-        curr = nxt
+        nxt = curr.next  # Store the next node
+        curr.next = prev  # Reverse the link to point to the previous node
+        prev = curr  # Move the previous node pointer to the current node
+        curr = nxt  # Move to the next node in the original list
+    
+    # After reversing, prev points to the new head of the reversed linked list
     r = prev
+    
+    # Step 2: Traverse the reversed list to find the node at the given position
     while position < positionFromTail:
-        position +=1
-        r = r.next
+        position += 1  # Move to the next node
+        r = r.next  # Advance to the next node
+    
+    # Return the value of the node at the specified position from the tail
     return r.data
